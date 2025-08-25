@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Munibabu Doddi - Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f7fb;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #4e54c8, #8f94fb);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    header h1 { font-size: 2.5em; margin-bottom: 10px; }
+    header p { font-size: 1.2em; }
+
+    nav {
+      background: #222;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+    nav a:hover { background: #8f94fb; }
+
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    section h2 {
+      margin-bottom: 15px;
+      font-size: 1.6em;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .content { display: none; margin-top: 15px; }
+
+    .card {
+      background: #fff;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-left: 5px solid #4e54c8;
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: translateY(-4px); }
+
+    .card h3 {
+      margin: 0 0 5px;
+      font-size: 1.3em;
+      color: #0072ff;
+    }
+    .card p { margin: 5px 0 10px; font-size: 0.95em; }
+
+    .card a {
+      display: inline-block;
+      margin: 8px 0;
+      color: #0072ff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .card a:hover { text-decoration: underline; }
+
+    .proj-details {
+      display: none;
+      margin-top: 15px;
+      padding: 12px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #0072ff;
+      font-size: 0.95em;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .proj-details h4 { margin-top: 12px; font-size: 1.1em; color: #444; }
+
+    .proj-details ul { margin: 8px 0 12px 20px; }
+
+    .card button {
+      margin-top: 8px;
+      padding: 6px 12px;
+      background: #0072ff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85em;
+      transition: 0.3s;
+    }
+    .card button:hover { background: #0056cc; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: white;
+      margin-top: 40px;
+    }
+
+    .social a {
+      color: white;
+      margin: 0 8px;
+      font-size: 18px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .social a:hover { color: #8f94fb; }
+
+    /* Section backgrounds */
+    #about { background: linear-gradient(to right, #fceabb, #f8b500); }
+    #projects { background: linear-gradient(to right, #d9a7c7, aqua); }
+    #internships { background: linear-gradient(to right, #00c6ff, #0072ff); color: black; }
+    #skills { background: linear-gradient(to right, #6a11cb, #2575fc); color: white; }
+    #education { background: linear-gradient(to right, #43cea2, #a8edea); color: black; }
+    #achievements { background: linear-gradient(to right, #f7971e, #ffd200); }
+    #certifications { background: linear-gradient(to right, #00c6ff, #0072ff); color: black; }
+    #conferences { background: linear-gradient(to right, #ff758c, #ff7eb3); }
+    #contact { background: linear-gradient(to right, #11998e, #38ef7d); color: white; }
+
+    @media(max-width:768px){
+      header h1 { font-size: 1.8em; }
+      section { margin: 20px; }
+      nav { gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MUNIBABU DODDI</h1>
+    <p>Aspiring Full-Stack Developer & Cloud Enthusiast | Python, Java, Django, Node.js, SQL, AWS| </p>
+    <p>1-104/1,Govardhnapuram, Varadaiah Palem, Tirupati Dt,<br> Andhra Pradesh, India</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#internships">Internships & Trainings</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#conferences">Conferences</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- About -->
+  <section id="about">
+    <h2 onclick="toggleContent('about-content')">About Me ⬇️</h2>
+    <div class="content" id="about-content">
+      <p>Highly motivated and hardworking professional seeking a challenging role in a reputable organization to expand skills, knowledge, and drive impactful growth. I am a passionate and results-driven technology enthusiast with hands-on experience in Python, Java,Database, backend development, full-stack web development, cloud computing (AWS), and data analytics. I enjoy building secure, scalable, and high-performing applications and solving real-world problems with innovative solutions.Also Enthusiastic fresher with strong skills in SQL and Python, specializing in database design, query optimization, and backend development. Eager to apply my knowledge in SQL, Python, and data analysis to build efficient and scalable solutions.  </p>
+    </div>
+  </section>
+  
+ <!-- Projects -->
+<section id="projects">
+  <h2 onclick="toggleContent('projects-content')">Projects ⬇️</h2>
+  <div class="content" id="projects-content">
+
+    <!-- Project 1 -->
+    <div class="card">
+      <h3>High-Availability Cloud Architecture ( Final Year Project)</h3>
+      <p><b>Tech:</b> AWS, RabbitMQ, EC2 – Cost Optimized & Scalable</p>
+      <button onclick="toggleProject('proj1', this)">📌 Project Description</button>
+      <div id="proj1" class="proj-details">
+        <h4>Objective</h4>
+        <p>• Design and deploy a <b>scalable e-commerce web application </b>for startups using AWS EC2 and open-source tools to cut cloud costs.<br> 
+• Ensured high availability and performance while optimizing affordability for small-scale deployments.<br> 
+• cloud-native, fault-tolerant architecture ensuring <b>uninterrupted availability</b> during traffic surges or failures.</p>
+
+        <h4>Aim</h4>
+        <p>Build a <b>cost-efficient and scalable cloud system</b> balancing workloads, integrating <b>RabbitMQ</b> for async communication, and leveraging <b>AWS</b> services.</p>
+
+        <h4>Tech Stack</h4>
+        <ul>
+          <li>AWS EC2 – Compute instances</li>
+          <li>AWS EKS / Kubernetes – Container orchestration & scaling</li>
+          <li>RabbitMQ – Asynchronous communication</li>
+          <li>Redis – Caching layer</li>
+          <li>Node.js + Express – Backend services</li>
+          <li>React.js – Frontend interface</li>
+        </ul>
+
+        <h4>Features</h4>
+        <ul>
+          <li>High-availability deployment with <b>Load Balancing</b></li>
+          <li><b>Fault tolerance</b> using RabbitMQ queues</li>
+          <li><b>Elastic scaling</b> with Kubernetes on AWS</li>
+          <li>Performance boost with <b>Redis caching</b></li>
+          <li>Cost-optimized setup using auto-scaling groups</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="card">
+      <h3>Screen Time Analysis</h3>
+      <p><b>Tech:</b> Python, Pandas, Matplotlib – Visual Insights</p>
+      <a href="https://github.com/Munibabu-king/Screen-Time-Analysis-Using-Python" target="_blank">📜 View Project</a>
+      <button onclick="toggleProject('proj2', this)">📌 Project Description</button>
+      <div id="proj2" class="proj-details">
+        <h4>Objective</h4>
+        <p>• Analyze <b>user behavior patterns</b> via screen usage to detect inefficiencies and improve <b>time management</b>.<br>
+• Developed a Python-based screen time analysis tool with visual reports and usage insights. <br>  
+• Enabled better time management by tracking app and website activity across devices. 
+</p>
+
+        <h4>Aim</h4>
+        <p>Provide <b>visual insights</b> into app usage, trends, and help build <b>healthier digital habits</b>.</p>
+
+        <h4>Tech Stack</h4>
+        <ul>
+          <li>Python 3</li>
+          <li>Pandas – Data cleaning</li>
+          <li>Matplotlib / Seaborn – Visualization</li>
+          <li>NumPy – Data manipulation</li>
+        </ul>
+
+        <h4>Features</h4>
+        <ul>
+          <li>Tracks daily & weekly screen time</li>
+          <li>Generates visual charts</li>
+          <li>Calculates average session duration</li>
+          <li>Detects most-used apps & trends</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="card">
+      <h3>Restaurant Order System</h3>
+      <p><b>Tech:</b> Java, Oracle SQL – Real-time Tracking</p>
+      <button onclick="toggleProject('proj3', this)">📌 Project Description</button>
+      <div id="proj3" class="proj-details">
+        <h4>Objective</h4>
+        <p>Develop a <b>database-driven system</b> to simplify order management, improve staff efficiency, and enhance customer experience.</p>
+
+        <h4>Aim</h4>
+        <p>Create a <b>real-time ordering system</b> ensuring accurate order placement, tracking, and billing.</p>
+
+        <h4>Tech Stack</h4>
+        <ul>
+          <li>Java (JDBC)</li>
+          <li>Oracle SQL – Database</li>
+          <li>JDBC – Connectivity</li>
+        </ul>
+
+        <h4>Features</h4>
+        <ul>
+          <li>Place & track real-time orders</li>
+          <li>Store customer & order details</li>
+          <li>Manage dynamic menus</li>
+          <li>Generate bills & reports</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="card">
+      <h3>Hospital Management System</h3>
+      <p><b>Tech:</b> Django, REST API – Role-Based Access</p>
+      <a href="https://github.com/Munibabu-king/HOSPITAL-MANAGEMENT-SYSTEM-USING-DJANGO" target="_blank">📜 View Project</a>
+      <button onclick="toggleProject('proj4', this)">📌 Project Description</button>
+      <div id="proj4" class="proj-details">
+        <h4>Objective</h4>
+        <p>• Streamline <b>patient-doctor interactions</b>, improve appointment scheduling, and ensure efficient operations.<br>
+• Built a secure Django-based Hospital Management System with role-based access and smart scheduling.<br>  
+• Integrated billing, analytics, and responsive design for streamlined healthcare workflows. 
+</p>
+
+        <h4>Aim</h4>
+        <p>Provide a <b>secure, role-based hospital system</b> with REST APIs for patients, doctors, and admins.</p>
+
+        <h4>Tech Stack</h4>
+        <ul>
+          <li>Django (Python)</li>
+          <li>Django REST Framework (DRF)</li>
+          <li>SQLite – Database</li>
+          <li>Bootstrap + HTML/CSS</li>
+        </ul>
+
+        <h4>Features</h4>
+        <ul>
+          <li><b>Patient Module</b> – Register, login, appointments, prescriptions</li>
+          <li><b>Doctor Module</b> – Manage appointments, assign treatments</li>
+          <li><b>Admin Module</b> – Manage doctors, patients, hospital details</li>
+          <li>REST API integration</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Internships -->
+  <section id="internships">
+    <h2 onclick="toggleContent('internships-content')">Internships & Trainings ⬇️</h2>
+    <div class="content" id="internships-content">
+      <div class="card"><h3><b>Cloud Computing Intern – Slash Mark</b></h3>  <p><b>Duration:</b> Dec 2024 – May 2025</p>
+        <p><b>Explained :</b> Cloud-native deployment, AWS EC2, Load Balancing, RabbitMQ integration.</p>
+        <p><b>Gained :</b> Skills in system architecture, scalability, high availability, and cost optimization.</p>
+        <p><b>Project :</b> High-Availability Cloud Architecture With Load Balancing And Rabbitmq Integration</p></div>
+      <!-- Internship 5 -->
+      <div class="card">
+        <h3>Full Stack Web Developer Intern – Slash Mark IT Solutions</h3>
+        <p><b>Duration :</b> May 2024 – Jul 2024</p>
+        <p><b>Explained :</b> Django framework, REST APIs, web security, and responsive UI design.</p>
+        <p><b>Gained :</b> Skills in secure healthcare workflows and hospital record management.</p>
+        <p><b>Project :</b> Hospital Management System (Django + REST API)</p>
+      </div>
+      <!-- Internship 7 -->
+      <div class="card">
+        <h3>Java Development & Designing Intern – AND Interns</h3>
+        <p><b>Duration :</b> Sep 2023 – Dec 2023</p>
+        <p><b>Explained :</b> Java backend development, JDBC, Oracle SQL integration.</p>
+        <p><b>Gained :</b> Skills in building real-time systems with reporting and inventory management.</p>
+        <p><b>Project :</b> Restaurant Order Management System (Java + Oracle SQL)</p>
+      </div>
+
+      <!-- Internship 8 -->
+      <div class="card">
+        <h3>Data Analytics Intern – APSSDC</h3>
+        <p><b>Duration :</b> May 2023 – Jul 2023</p>
+        <p><b>Explained :</b> Python analytics, visualization, reporting.</p>
+        <p><b>Gained :</b> Skills in time tracking, digital well-being insights, and Python-based data analysis.</p>
+        <p><b>Project :</b> Screen Time Analysis Tool (Python + Matplotlib)</p>
+      </div>
+ <div class="card">
+        <h3>Data Science & Analytics Training – Zidio Development</h3>
+        <p><b>Duration :</b> Jun 2024 – Aug 2024</p>
+        <p><b>Explained :</b> Predictive modeling, advanced analytics, and reporting.</p>
+        <p><b>Gained :</b> Skills in Natural Language Processing (NLP), decision-making with data insights.</p>
+      </div>
+
+      <!-- Internship 3 -->
+      <div class="card">
+        <h3>Python Programming Training – Mainflow Services</h3>
+        <p><b>Duration :</b> Jun 2024 – Aug 2024</p>
+        <p><b>Explained :</b> Python modules, OOP, database handling with MySQL & MongoDB, caching with Redis.</p>
+        <p><b>Gained :</b> Skills in backend development, automation with Pandas/NumPy, and async task handling with RabbitMQ.</p>
+      </div>
+
+      <!-- Internship 4 -->
+      <div class="card">
+        <h3>SQL Developer Training – Systecks Solutions</h3>
+        <p><b>Duration :</b> Jun 2024 – Jul 2024</p>
+        <p><b>Explained :</b> Database design, query optimization, stored procedures, triggers.</p>
+        <p><b>Gained :</b> Hands-on experience in Oracle SQL, database schemas, and ETL tasks.</p>
+      </div>
+
+      <!-- Internship 6 -->
+      <div class="card">
+        <h3>Data Science Training Program – SkillVertex</h3>
+        <p><b>Duration :</b> Jan 2024 – Feb 2024</p>
+        <p><b>Explained :</b> Data preprocessing, visualization, and machine learning models.</p>
+        <p><b>Gained :</b> Skills in EDA, regression models, clustering, feature engineering, and SQL for analytics.</p>
+      </div>
+
+    </div>
+      
+  </section>
+
+  
+        <!-- Skills -->
+  <section id="skills">
+    <h2 onclick="toggleContent('skills-content')">Technical Skills ⬇️</h2>
+    <div class="content" id="skills-content">
+      <p><b>Languages:</b> Python, Java</p>
+      <p><b>Web:</b> HTML5, CSS3, JavaScript, ReactJS, NodeJS</p>
+      <p><b>Cloud:</b> AWS (S3, EC2)</p>
+      <p><b>Databases:</b> Oracle SQL</p>
+      <p><b>Others:</b> DBMS, Web Development, AI (Basics), ML (Basics)</p>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <h2 onclick="toggleContent('edu-content')">Education ⬇️</h2>
+    <div class="content" id="edu-content">
+      <div class="card"><b>B.Tech (CSE)</b> – MITS, Madanapalle (2021 - 2025) | CGPA: 9.28/10</div>
+      <div class="card"><b>Intermediate</b> – Vikram Jr College (2019 - 2021) | 90%</div>
+      <div class="card"><b>Secondary School</b> – Z.P. High School (2019) | CGPA: 9.8/10</div>
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <section id="achievements">
+    <h2 onclick="toggleContent('achieve-content')">Achievements ⬇️</h2>
+    <div class="content" id="achieve-content">
+      <div class="card">🏆 Elite+Gold badge in NPTEL 'Business Analytics & Text Mining' (Top 5%)  
+        <a href="https://drive.google.com/file/d/1U7e7NNRhQYTWhMdRBodhFrhxnXvcPLUo/view?usp=drive_link" target="_blank">📜 View Certificate</a>
+      </div>
+      <div class="card">🥇 1st prize in Technical Quiz by ASCE at MITS  
+        <a href="https://drive.google.com/file/d/1XUrv588QUjZekCAXYTDQSYQT_upOo_D5/view?usp=drive_link" target="_blank">📜 View Certificate</a>
+      </div>
+      <div class="card">🏆 Elite+Silver badge in NPTEL 'E-Business' (Top 5%)  
+        <a href="https://drive.google.com/file/d/1ShxE9qqiWWbvip6OmbJO2imUAljLxkQ2/view?usp=drive_link" target="_blank">📜 View Certificate</a>
+      </div>
+      <div class="card">🥇 Participated in National Level STTP 2k24 (AICTE, Dec 2024)  
+        <a href="https://drive.google.com/file/d/1XxkRYRtbzrpfpN6Q9yAYYBdeGh4zj2LQ/view?usp=drive_link" target="_blank">📜 View Certificate</a>
+      </div>
+      <div class="card">🥇 Certificate of Appreciation by NPTEL for excellent course performance  
+        <a href="https://drive.google.com/file/d/1Dy-4F_-O7a8dNogmxMoyoWslJHEzfAAX/view?usp=drive_link" target="_blank">📜 View Certificate - 1</a>  
+        <a href="https://drive.google.com/file/d/1N6QVELfvBk9Q-m7vsXPDZG2i75iTPXPA/view?usp=drive_link" target="_blank">📜 View Certificate - 2</a>
+      </div>
+      <div class="card">🎓 NMMS Govt Exam – Cash Prize for academic excellence</div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications">
+    <h2 onclick="toggleContent('cert-content')">Certifications ⬇️</h2>
+    <div class="content" id="cert-content">
+      <div class="card">Wipro TalentNext – Wipro (Oct 2024)  
+        <a href="https://drive.google.com/file/d/1HLBFpljQXymvMoJfJsg7KF-WBD6UTtHW/view?usp=drive_link" target="_blank">📜 View Certificate</a>
+      </div>
+      <div class="card">Introduction to Cybersecurity – Cisco (June 2024)  
+        <a href="https://drive.google.com/file/d/1jLqcOjCV39fDLmnfxCUn0cIpnMUPxI_3/view?usp=drive_link" target="_blank">📜 View Certificate</a>
+      </div>
+      <div class="card">Java Development & Designing – AND (Sep 2023)  
+        <a href="https://drive.google.com/file/d/1hpCrtcSHPIXkJoyWX0gylpsZCA9_RYuH/view?usp=drive_link" target="_blank">📜 View Certificate</a>
+      </div>
+      <div class="card">Data Science & Analytics – Zidio (Aug 2024)  
+        <a href="https://drive.google.com/file/d/1SjVI-TGvrY80MrI6ZbzyIkzmh9aQjGPP/view?usp=drive_link" target="_blank">📜 View Certificate</a>
+      </div>
+      <div class="card">Google Data Analytics – Coursera (Nov 2022)  
+        <a href="https://drive.google.com/file/d/161rREOh-LA4nPtMuVRycCLgwI9Zi85Ra/view?usp=drive_link" target="_blank">📜 View Certificate</a>
+      </div>
+      <div class="card">Data Science – Skill Vertex (Jan 2024)  
+        <a href="https://drive.google.com/file/d/1Scj3RxG9oO51K977NCAEV1rQcxXJB0oc/view?usp=drive_link" target="_blank">📜 View Certificate</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conferences -->
+  <section id="conferences">
+    <h2 onclick="toggleContent('conf-content')">Conferences & Workshops ⬇️</h2>
+    <div class="content" id="conf-content">
+      <div class="card">Attended a Science Academics Lecture on Number Analytics & Data Science at MITS</div>
+      <div class="card">Participated in multiple Data Science, Python, and SQL Developer workshops <a href="https://drive.google.com/file/d/1a1ZwioSUYW9-8kH7M-wX1fWb17mgh9jT/view?usp=drive_link" target="_blank"> 📜 View Certificate</a>
+</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2 onclick="toggleContent('contact-content')">Contact ⬇️</h2>
+    <div class="content" id="contact-content">
+      <p>📞 +91 7569412457</p>
+      <p>📧 munibabu152004@gmail.com</p>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/d-munibabu-215411292" target="_blank">LinkedIn</a>
+        <a href="https://github.com/Munibabu-king" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+
+
+  <footer>
+    <p>© 2025 Munibabu Doddi | Portfolio</p>
+  </footer>
+
+  <script>
+    function toggleContent(id) {
+      const content = document.getElementById(id);
+      content.style.display = (content.style.display === "block") ? "none" : "block";
+    }
+
+    function toggleProject(id, btn) {
+      const proj = document.getElementById(id);
+      if (proj.style.display === "block") {
+        proj.style.display = "none";
+        btn.textContent = "📌 Project Description";
+      } else {
+        proj.style.display = "block";
+        btn.textContent = "📌 Hide Details";
+      }
+    }
+
+    document.querySelectorAll('nav a').forEach(link=>{
+      link.addEventListener('click', function(e){
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href'))
+          .scrollIntoView({behavior:'smooth'});
+      });
+    });
+  </script>
+</body>
+</html>
